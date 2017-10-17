@@ -1,0 +1,97 @@
+<!-- MIDTERM PROJECT: portfolio website - INDEX/HOME PAGE !-->
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title> Amy Lee </title>
+	<link rel = "icon" type = "image/jpg" href = "IMG_1119.jpg">
+	<!-- YAY LITTLE FAVICON !-->
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width = device - width, initial - scale = 1.0">
+
+	<style type = "text/css">
+		body{
+			font-family: "Orator Std";
+			background-color: black;
+			color: white;
+			cursor: crosshair;
+		}
+		div.SideBar {
+			width: 15%;
+			height: 90vh;
+			float: left;
+			margin-right: 20px;
+		}
+		h1 {
+			margin-left: 20px;
+			margin-top: 20px;
+			margin-right: 20px;
+		}
+		h4 {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		a {
+			text-decoration: none;
+			color: white;
+			cursor: crosshair;
+		}
+		a:hover {
+			color: red;
+		}
+		div.Content {	
+			overflow: auto;
+			white-space: nowrap;	
+			margin-top: 5vh;
+			margin-bottom: 5vh; 
+		} 
+
+		img {
+			height: 90vh;
+			width: auto;
+			-webkit-animation-name: spin;
+			-webkit-animation-duration: 4s;
+			animation-name: spin;
+			animation-duration: 4s;
+			animation-delay: 0s;
+			animation-direction: reverse;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		@-webkit-keyframes spin {
+			from {transform: rotate(0deg);}
+			to {transform: rotate(360deg);}
+		}
+		@keyframes spin {
+			from {transform: rotate(0deg);}
+			to {transform: rotate(360deg);}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class = "SideBar">
+		<h1> Amy Lee </h1>
+
+		<a href = "photography.html"> <h4> Photography </h4> </a>
+		<a href = "motion.html"> <h4> Motion </h4> </a>  
+		<a href = "Multimedia.html"> <h4> Multimedia </h4> </a>
+		<a href = "design.html"> <h4> Design </h4> </a>
+		<a href = "info.html"> <h4> Info </h4> </a> 
+	</div>
+
+	<div class = "Content">
+		<img src = "fish.png">
+	</div>
+	
+
+
+</body>
+
+
+
+</html>
+
+
