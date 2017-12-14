@@ -1,0 +1,199 @@
+<!-- MIDTERM PROJECT: brand website - INDEX/HOME PAGE !-->
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title> K I N G  S U I T E </title>
+	<link rel = "icon" type = "image/png" href = "King Suite Logo.png">
+	<!-- YAY LITTLE FAVICON !-->
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width = device - width, initial - scale = 1.0">
+
+	<style type = "text/css">
+		@font-face { font-family: OldLondon; src: url('old_london/OldLondon.ttf');  }
+		body {
+			font-family: "OldLondon";
+			color: white;  /* change to white once the background color white is out */
+			background-color: black;
+			cursor: crosshair;
+		}
+		a {
+			color: red;
+			text-decoration: none;
+		}
+		a:hover {
+			color: white;
+		}
+		div.Header {
+			position: fixed;
+			left: 25px;
+			float: top;
+		}
+		div#Logo {
+			top: 0px;
+		}
+		#Logo:hover {
+			transform: scale(1.1);
+		}
+		div#Title { 
+			font-size: 50px;
+			letter-spacing: 50px;
+			word-spacing: 15px;
+			left: 150px;
+			top: 25px;
+		}
+
+		.parallaximg1, .parallaximg2, .parallaximg3, .parallaximg4, .parallaximg5, .parallaximg6, .parallaximg7 {
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.parallaximg1 {
+			background-image: url("LookbookPhotos/IMG_7927.jpg");
+			min-height: 900px;
+		}
+		.parallaximg2 {
+			background-image: url("LookbookPhotos/IMG_7709.jpg");
+			min-height: 900px;
+		}
+		.parallaximg3 {
+			background-image: url("LookbookPhotos/IMG_5653.jpg");
+			min-height: 900px;
+		}
+		.parallaximg4 {
+			background-image: url("LookbookPhotos/IMG_5593.jpg");
+			min-height: 900px;
+		}
+		.parallaximg5 {
+			background-image: url("LookbookPhotos/IMG_4071.jpg");
+			min-height: 900px;
+		}
+		.parallaximg6 {
+			background-image: url("LookbookPhotos/IMG_4186.jpg");
+			min-height: 900px;
+		}
+		.parallaximg7 {
+			background-image: url("LookbookPhotos/IMG_0126.jpg");
+			min-height: 900px;
+		}
+		.caption {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			color: white;
+			font-size: 50px;
+		}
+		.topImage {
+			transform: scale(0.3);
+		}
+
+
+		/* THE SIDE NAVIGATION/MENU BAR */
+		.sidenav {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    right: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		    padding-top: 60px;
+		}
+
+		.sidenav a {
+		    padding: 8px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: white;
+		    display: block;
+		    transition: 0.3s;
+		}
+
+		.sidenav a:hover {
+		    color: red;
+		}
+
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+
+		@media screen and (max-height: 450px) {
+		  .sidenav {padding-top: 15px;}
+		  .sidenav a {font-size: 18px;}
+		}
+	</style>
+
+</head>
+
+
+
+
+
+<body>
+	<div class = "Header" id = "Logo">
+		<a href = "KShome.html"> <img src = "King Suite Logo.png" width = "100px" height = "100px"/> </a>
+	</div>
+
+
+	</hr>
+	<div class = "Header" id = "Title"> 
+		<a href = "KShome.html"> King Suite </a>
+	</div>
+	</hr>
+
+
+
+	<div class = "parallaximg1">
+		<div class = "caption"> </div>
+		<div class = "topImage"> <img src = "IMG_7709.jpg"> </div>
+	</div>
+
+	<div class = "parallaximg2">
+		<div class = "caption"> </div>
+	</div>
+
+	<div class = "parallaximg3"> </div>
+	<div class = "parallaximg4"> </div>
+	<div class = "parallaximg5"> </div>
+	<div class = "parallaximg6"> </div>
+	<div class = "parallaximg7"> </div>
+
+
+	<!-- SIDE NAVIGATION / MENU BAR !-->
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="KShome.html">Home</a>
+	  <a href="KSshop.html">Shop</a>
+	  <a href="KSabout.html">About</a>
+	</div>
+
+	<span style="position: fixed; top: 25px; right: 50px; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span>
+
+
+	<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "200px";
+	}
+
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	}
+	</script>
+
+
+
+
+</body>
+
+
+</html>

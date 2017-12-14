@@ -1,0 +1,545 @@
+<!-- MIDTERM PROJECT: brand website - SHOP PAGE !-->
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title> K I N G  S U I T E </title>
+	<link rel = "icon" type = "image/png" href = "King Suite Logo.png">
+	<!-- YAY LITTLE FAVICON !-->
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width = device - width, initial - scale = 1.0">
+
+	<style type = "text/css">
+		@font-face { font-family: OldLondon; src: url('old_london/OldLondon.ttf');  }
+		body {
+			font-family: "OldLondon";
+			color: white;  /* change to white once the background color white is out */
+			background-color: black;
+			cursor: crosshair;
+		}
+		a {
+			color: rgb(91, 5, 176); 
+			text-decoration: none;
+		}
+		a:hover {
+			color: red;
+		}
+		div.Header {
+			position: fixed;
+			left: 25px;
+			float: top;
+			/* background-color: red; */
+		}
+		div#Logo {
+			top: 0px;
+		}
+		#Logo:hover {
+			transform: scale(1.1);
+		}
+		div#Title { 
+			font-size: 50px;
+			letter-spacing: 50px;
+			word-spacing: 15px;
+			left: 150px;
+			top: 25px;
+		}
+		hr {
+			display: block;
+			height: 3px;
+			border: 0;
+			color: white;
+		}
+		div.Content {
+			max-width: 1000px;
+			/* background-color: blue; */
+			margin: auto;
+			margin-top: 100px;
+			padding: 10px;
+			overflow: auto;
+
+		}
+		.image-container {
+			position: relative;
+			left: 10px;
+			width: 30%;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.image-hover {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			transition: .5s ease;
+		}
+		.image-container:hover .image-hover {
+			opacity: 1;
+		}
+		.image {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		.Caption {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			color: red;
+			font-size: 30px;
+			background-color: rgba(0, 0, 0, 0.4);
+
+			overflow: scroll;
+			/* for modal */
+			cursor: pointer;
+		}
+
+		/* The Modal (background) */
+		.modal {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Sit on top */
+		    padding-top: 100px; /* Location of the box */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		    background-color: black;
+		    color: white;
+		    margin: auto;
+		    padding: 20px;
+		    border: 1px solid #888;
+		    width: 60%;
+		}
+		.modal-image {
+			height: 60vh;
+		}
+		.modal-text {
+			float: right;
+			width: 30vw;
+			overflow: auto;
+			text-align: left;
+		}
+
+		/* The Close Button */
+		.close {
+		    color: #aaaaaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: #000;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+
+		.sidenav {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    right: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		    padding-top: 60px;
+		}
+
+		.sidenav a {
+		    padding: 8px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: white;
+		    display: block;
+		    transition: 0.3s;
+		}
+
+		.sidenav a:hover {
+		    color: red;
+		}
+
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+
+		@media screen and (max-height: 450px) {
+		  .sidenav {padding-top: 15px;}
+		  .sidenav a {font-size: 18px;}
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class = "Header" id = "Logo">
+		<a href = "KShome.html"> <img src = "King Suite Logo.png" width = "100px" height = "100px"/> </a>
+	</div>
+
+	</hr>
+	<div class = "Header" id = "Title"> 
+		<a href = "KShome.html"> King Suite </a>
+	</div>
+	</hr>
+
+
+
+<!-- SIDE NAVIGATION / MENU !-->
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="KShome.html">Home</a>
+	  <a href="KSshop.html">Shop</a>
+	  <a href="KSabout.html">About</a>
+	</div>
+
+	<span style="position: fixed; top: 25px; right: 50px; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span>
+
+
+	<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "200px";
+	}
+
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	}
+	</script>
+
+
+<!--
+	<div class = "Content">
+		<br>
+		<p> abaeibrvaenvjknanlkfvandlfknblkanfldbnjandvjkfjadvkjbkjaebvjeboruheauhvohaohvoihaoei. aerfawefwaf. </p>
+		<div class = "ShopPhotos1" > <img style = "width: 20%; height: auto" src = "ShopPhotos/IMG_7625.jpg"> </div>
+		<div class = "Caption"> fraternity bomber </div>
+
+		
+	</div>  !-->
+
+
+	<!-- ALL THE DAMN CLOTHES !-->
+	<div class = "Content">
+		<div class = "image-container" >
+			<img src = "ShopPhotos/IMG_7912.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/nike bomber.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption1"> Fraternity Bomber </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/IMG_6677.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/stripe tee.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption2"> Dot that Took a Walk Tee </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/IMG_7625.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/white ankle boots.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption3"> Prospect Ankle Boots </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/yukamannami.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/white dress.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption4"> The Victoria Dress </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/slick woods.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/yellow sunglasses.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption5"> Future Gurl Frame </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/fka twigs.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/pearl hoops.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption6"> Mother of Pearl Earrings </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/charlie heaton.jpeg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/flower suit jacket.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption7"> Flora Jacket </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/rina fukushi.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/white bomber.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption8"> Carrie Satin Bomber </div>
+		</div>
+
+		<div class = "image-container" >
+			<img src = "ShopPhotos/millie bb.jpg" class = "image">
+			<div class = "image-hover">
+				<img src = "ShopPhotos/rainbow tee.jpg" class = "image">
+			</div>
+			<div class = "Caption" id = "caption9"> Over the Rainbow Tee </div>
+		</div>
+
+	</div>
+
+
+
+
+	<!-- THE MODALS -->
+	<div id="modal1" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span1" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/nike bomber.jpg">
+	    <div class = "modal-text">
+	    	<h1> Fraternity Bomber </h1> 
+	    	<p> Join the brotherhood. Be a part of the royal line with the KS Fraternity bomber. </p>
+	    	<h2> $75.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal2" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span2" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/stripe tee.jpg">
+	    <div class = "modal-text">
+	    	<h1> Dot That Took a Walk Tee </h1> 
+	    	<p> "A line is a dot that went for a walk." <br> - Paul Klee </p>
+	    	<h2> $25.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal3" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span3" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/white ankle boots.jpg">
+	    <div class = "modal-text">
+	    	<h1> Prospect Ankle Boots </h1> 
+	    	<p> Stomp around with these future booties. Start a trend. Be a leader.</p>
+	    	<h2> $59.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal4" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span4" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/white dress.jpg">
+	    <div class = "modal-text">
+	    	<h1> The Victoria Dress </h1> 
+	    	<p> Channel Queen Victoria with this royale dress and be the ruler of your own world. </p>
+	    	<h2> $65.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal5" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span5" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/yellow sunglasses.jpg">
+	    <div class = "modal-text">
+	    	<h1> Future Gurl Frame </h1> 
+	    	<p> See through all the bullshit. </p>
+	    	<h2> $21.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal6" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span6" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/pearl hoops.jpg">
+	    <div class = "modal-text">
+	    	<h1> Mother of Pearl Earrings </h1> 
+	    	<p> The world is your oyster. Go find the treasure in your life. </p>
+	    	<h2> $29.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal7" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span7" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/flower suit jacket.jpg">
+	    <div class = "modal-text">
+	    	<h1> Flora Jacket </h1> 
+	    	<p> A garden on an Eve. </p>
+	    	<h2> $89.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal8" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span8" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/white bomber.jpg">
+	    <div class = "modal-text">
+	    	<h1> Carrie Satin Bomber </h1> 
+	    	<p> Be careful not to let the blood stain the jacket... </p>
+	    	<h2> $85.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="modal9" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span id = "span9" class="close">&times;</span>
+	    <img class = "modal-image" src = "ShopPhotos/rainbow tee.jpg">
+	    <div class = "modal-text">
+	    	<h1> Over the Rainbow Tee </h1> 
+	    	<p> Somewhere... </p>
+	    	<h2> $31.00 </h2>
+	    </div>
+	  </div>
+	</div>
+
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById('modal1');
+	var modal2 = document.getElementById('modal2');
+	var modal3 = document.getElementById('modal3');
+	var modal4 = document.getElementById('modal4');
+	var modal5 = document.getElementById('modal5');
+	var modal6 = document.getElementById('modal6');
+	var modal7 = document.getElementById('modal7');
+	var modal8 = document.getElementById('modal8');
+	var modal9 = document.getElementById('modal9');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("caption1");
+	var btn2 = document.getElementById("caption2");
+	var btn3 = document.getElementById("caption3")
+	var btn4 = document.getElementById("caption4")
+	var btn5 = document.getElementById("caption5")
+	var btn6 = document.getElementById("caption6")
+	var btn7 = document.getElementById("caption7")
+	var btn8 = document.getElementById("caption8")
+	var btn9 = document.getElementById("caption9")
+
+	var span = document.getElementById("span1");
+	var span2 = document.getElementById("span2");
+	var span3 = document.getElementById("span3");
+	var span4 = document.getElementById("span4");
+	var span5 = document.getElementById("span5");
+	var span6 = document.getElementById("span6");
+	var span7 = document.getElementById("span7");
+	var span8 = document.getElementById("span8");
+	var span9 = document.getElementById("span9");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	var span2 = document.getElementsByClassName("close")[1];
+	var span3 = document.getElementsByClassName("close")[2];
+	var span4 = document.getElementsByClassName("close")[3];
+	var span5 = document.getElementsByClassName("close")[4];
+	var span6 = document.getElementsByClassName("close")[5];
+	var span7 = document.getElementsByClassName("close")[6];
+	var span8 = document.getElementsByClassName("close")[7];
+	var span9 = document.getElementsByClassName("close")[8];
+
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+	    modal.style.display = "block";
+	}
+	btn2.onclick = function() {
+	    modal2.style.display = "block";
+	}
+	btn3.onclick = function() {
+	    modal3.style.display = "block";
+	}
+	btn4.onclick = function() {
+	    modal4.style.display = "block";
+	}
+	btn5.onclick = function() {
+	    modal5.style.display = "block";
+	}
+	btn6.onclick = function() {
+	    modal6.style.display = "block";
+	}
+	btn7.onclick = function() {
+	    modal7.style.display = "block";
+	}
+	btn8.onclick = function() {
+	    modal8.style.display = "block";
+	}
+	btn9.onclick = function() {
+	    modal9.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    modal.style.display = "none";
+	}
+	span2.onclick = function() {
+	    modal2.style.display = "none";
+	}
+	span3.onclick = function() {
+	    modal3.style.display = "none";
+	}
+	span4.onclick = function() {
+	    modal4.style.display = "none";
+	}
+	span5.onclick = function() {
+	    modal5.style.display = "none";
+	}
+	span6.onclick = function() {
+	    modal6.style.display = "none";
+	}
+	span7.onclick = function() {
+	    modal7.style.display = "none";
+	}
+	span8.onclick = function() {
+	    modal8.style.display = "none";
+	}
+	span9.onclick = function() {
+	    modal9.style.display = "none";
+	}
+
+	</script>
+
+</body>
+
+
+</html>
